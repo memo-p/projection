@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; If not, see <http://www.gnu.org/licenses/>.
  */
-#pragma once
 
-#include <armadillo>
+#ifndef PROJCODE_INCLUDE_L1_L1_HPP
+#define PROJCODE_INCLUDE_L1_L1_HPP
 
 #include "l1/bucket.hpp"
 #include "l1/bucket_filter.hpp"
@@ -28,7 +28,7 @@ namespace l1 {
 inline double norm(double* y, int dimension) {
   double s = 0;
   for (size_t i = 0; i < dimension; i++)  {
-    s += abs(y[i]);
+    s += fabs(y[i]);
   }
   return s;
 }
@@ -37,12 +37,9 @@ inline void project(double* y, double* x, int dimension, const double a) {
   ProjC(y, x, dimension, a);
 }
 
-inline void project(arma::vec& y, arma::vec& x, const double a) {
-  arma::vec yabs = arma::abs(y);
-  arma::vec signY = arma::sign(y);
-  project(yabs.memptr(), x.memptr(), yabs.n_elem, a);
-  x %= signY;
-}
 
 }  // namespace l1
 } // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_L1_L1_HPP */

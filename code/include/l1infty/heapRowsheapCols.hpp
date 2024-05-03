@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,7 +16,9 @@
  *
  */
 
-#pragma once
+#ifndef PROJCODE_INCLUDE_L1INFTY_HEAPROWSHEAPCOLS_HPP
+#define PROJCODE_INCLUDE_L1INFTY_HEAPROWSHEAPCOLS_HPP
+
 
 #include <algorithm>
 #include <numeric>
@@ -32,7 +34,7 @@ inline void HeapRowsHeapCols(double* y, double* x, const int nrows,
   // std::cout << "hepRHC ";
   // ChronoP TS;
   // TS.Start();
-  ValueCoord Res[nrows];
+  ValueCoord *Res = new ValueCoord[nrows];
 
   std::vector<double> S(nrows, 0.);
   std::vector<int> k(nrows, 1);
@@ -137,7 +139,11 @@ inline void HeapRowsHeapCols(double* y, double* x, const int nrows,
 
   // TS.Stop();
   // std::cout << "Algo " << TS.ellapsed_m_second() << "\n";
+  delete[] Res;
 }
 
 }  // namespace l1infty
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_L1INFTY_HEAPROWSHEAPCOLS_HPP */

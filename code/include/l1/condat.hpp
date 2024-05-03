@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2020 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
+ * Copyright (C) 2024 Laurent Condat
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,7 +18,9 @@
  * From the code of Laurent Condat: https://lcondat.github.io
  */
 
-#pragma once
+#ifndef PROJCODE_INCLUDE_L1_CONDAT_HPP
+#define PROJCODE_INCLUDE_L1_CONDAT_HPP
+
 
 #include <float.h>
 #include <math.h>
@@ -69,3 +72,6 @@ inline void ProjC(const double* y, double* x, const int length,
 
 }  // namespace l1
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_L1_CONDAT_HPP */

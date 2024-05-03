@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,9 +15,10 @@
  * along with this program; If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#ifndef PROJCODE_INCLUDE_L1W_SPLIT_HPP
+#define PROJCODE_INCLUDE_L1W_SPLIT_HPP
 
-#include <armadillo>
+
 #include <cstdio>
 #include <iostream>
 
@@ -84,3 +85,6 @@ void ProjWSplit(double* y, double* w, double* x, const int length,
 
 }  // namespace l1w
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_L1W_SPLIT_HPP */

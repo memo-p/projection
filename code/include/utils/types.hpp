@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,7 +15,23 @@
  * along with this program; If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#ifndef PROJCODE_INCLUDE_UTILS_TYPES_HPP
+#define PROJCODE_INCLUDE_UTILS_TYPES_HPP
+
+/**
+ * @brief This macro is used to linearize the coordinate of 
+ * a matrix encoded into a linear structure such as a double*
+ * 
+ */
+#define COORD2D(i, j, nrows, ncols) (i * ncols + j)
+
+/**
+ * @brief This macro is used to linearize the coordinate of 
+ * a 3 dimensionnal tensor encoded into a linear structure such as a double*
+ * 
+ */
+#define COORD3D(i, j, k, d1, d2, d3) (i * (d2*d3) + j *d3 + k)
+
 
 namespace proj {
 
@@ -55,3 +71,6 @@ bool operator>(ValueCoord const & a, ValueCoord const & b)
   s = t;
 
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_UTILS_TYPES_HPP */

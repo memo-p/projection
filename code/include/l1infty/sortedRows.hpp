@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,9 +17,13 @@
  * From the code of Laurent Condat: https://lcondat.github.io
  */
 
-#pragma once
+#ifndef PROJCODE_INCLUDE_L1INFTY_SORTEDROWS_HPP
+#define PROJCODE_INCLUDE_L1INFTY_SORTEDROWS_HPP
+
 
 #include <numeric>
+#include <vector>
+#include <algorithm>
 
 #include "utils/Sort.hpp"
 #include "utils/print.hpp"
@@ -102,3 +106,6 @@ inline void SortedRows(double* y, double* x, const int nrows, const int ncols,
 
 }  // namespace l1infty
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_L1INFTY_SORTEDROWS_HPP */

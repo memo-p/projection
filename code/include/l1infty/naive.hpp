@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,9 +16,12 @@
  *
  */
 
-#pragma once
+#ifndef PROJCODE_INCLUDE_L1INFTY_NAIVE_HPP
+#define PROJCODE_INCLUDE_L1INFTY_NAIVE_HPP
+
 
 #include <numeric>
+#include <vector>
 
 #include "l1/l1.hpp"
 
@@ -114,3 +117,6 @@ inline void Naive(double* y, double* x, const int nrows, const int ncols,
 
 }  // namespace l1infty
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_L1INFTY_NAIVE_HPP */

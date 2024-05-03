@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,11 +18,12 @@
  * 
 */
 
-#pragma once
+#ifndef PROJCODE_INCLUDE_UTILS_SORT_HPP
+#define PROJCODE_INCLUDE_UTILS_SORT_HPP
+
 
 #include <iostream>
 #include <cstdio>
-#include <armadillo>
 
 static void quicksort(double *z, int *z_perm, const int lo, const int hi) {
 	int i=lo, j=hi, temp_id;
@@ -43,3 +44,6 @@ static void quicksort(double *z, int *z_perm, const int lo, const int hi) {
 	if (i-1>lo) quicksort(z, z_perm, lo, i-1);
 	if (hi>j+1) quicksort(z, z_perm, j+1, hi);
 }
+
+
+#endif /* PROJCODE_INCLUDE_UTILS_SORT_HPP */

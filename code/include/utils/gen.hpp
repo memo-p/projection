@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,8 +17,12 @@
  * From the code of Laurent Condat: https://lcondat.github.io
  */
 
+#ifndef PROJCODE_INCLUDE_UTILS_GEN_HPP
+#define PROJCODE_INCLUDE_UTILS_GEN_HPP
+
 #include <limits>
 #include <random>
+#include "utils/types.hpp"
 
 namespace proj {
 
@@ -81,5 +85,19 @@ inline double RowSparsity(double* y, const int nrows, const int ncols) {
   return static_cast<double>(nb_zeroed)/nrows;
 }
 
+inline void FillRand3DTensor(double* mt, const int d1, const int d2, const int d3) {
+  for (std::size_t i = 0; i < d1; i++) {
+    for (std::size_t j = 0; j < d2; j++) {
+      for (std::size_t k = 0; k < d3; k++) {
+        std::size_t id = COORD3D(i, j, k, d1, d2, d3);
+        mt[id] = ((double)rand()) / std::numeric_limits<int>::max();
+      }
+    }
+  }
+}
+
 
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_UTILS_GEN_HPP */

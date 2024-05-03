@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,7 +16,9 @@
  *
  */
 
-#pragma once
+#ifndef PROJCODE_INCLUDE_L1INFTY_HEAPROWSHEAPCOLSINV_HPP
+#define PROJCODE_INCLUDE_L1INFTY_HEAPROWSHEAPCOLSINV_HPP
+
 
 #include <algorithm>
 #include <numeric>
@@ -29,7 +31,7 @@ namespace l1infty {
 
 inline double HeapRowsHeapColsInv(double* y, double* x, const int nrows,
                              const int ncols, const double C) {
-  ValueCoord Res[nrows];
+  ValueCoord *Res = new ValueCoord[nrows];
 
   std::vector<double> S(nrows, 0.);
   std::vector<double> SS(nrows, 0.);
@@ -146,8 +148,13 @@ inline double HeapRowsHeapColsInv(double* y, double* x, const int nrows,
       }
     }
   }
+  
+  delete[] Res;
   return theta;
 }
 
 }  // namespace l1infty
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_L1INFTY_HEAPROWSHEAPCOLSINV_HPP */

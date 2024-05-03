@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,7 +15,9 @@
  * along with this program; If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#ifndef PROJCODE_INCLUDE_L1INFTY_SORTEDROWSCOLS_HPP
+#define PROJCODE_INCLUDE_L1INFTY_SORTEDROWSCOLS_HPP
+
 
 #include <numeric>
 
@@ -130,3 +132,6 @@ inline void SortedRowsCols(double* y, double* x, const int nrows,
 
 }  // namespace l1infty
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_L1INFTY_SORTEDROWSCOLS_HPP */

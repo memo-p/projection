@@ -12,13 +12,16 @@
  * @copyright Ariadna Quattoni
  */
 
+#ifndef PROJCODE_INCLUDE_L1INFTY_QUAT_HPP
+#define PROJCODE_INCLUDE_L1INFTY_QUAT_HPP
+
 #include <stdlib.h>
 #include <math.h>
 
 #include <cstdio>
 #include <iostream>
 
-#include "ChronoP.hpp"
+// #include "ChronoP.hpp"
 
 namespace proj {
 namespace l1infty {
@@ -372,3 +375,6 @@ inline void Quattoni(double *y, double *x, const int nrows, const int ncols,
 
 }  // namespace l1infty
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_L1INFTY_QUAT_HPP */

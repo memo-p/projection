@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Guillaume Perez
+ * Copyright (C) 2024 Guillaume Perez
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -14,15 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; If not, see <http://www.gnu.org/licenses/>.
  */
-#pragma once
+
+#ifndef PROJCODE_INCLUDE_L1W_L1W_HPP
+#define PROJCODE_INCLUDE_L1W_L1W_HPP
 
 #include <algorithm>
-#include <armadillo>
 #include <cmath>
 #include <cstdio>
 #include <cstring>
 #include <iostream>
 #include <vector>
+
 #include "l1w/bucket.hpp"
 #include "l1w/bucket_filter.hpp"
 #include "l1w/sort.hpp"
@@ -43,12 +45,9 @@ inline void project(double* y, double* w, double* x, int dimension, const double
   ProjWSplit(y, w, x, dimension, a);
 }
 
-void project(arma::vec& y, arma::vec& w, arma::vec& x, const double a) {
-  arma::vec yabs = arma::abs(y);
-  arma::vec signY = arma::sign(y);
-  ProjWSplit(yabs.memptr(), w.memptr(), x.memptr(), yabs.n_elem, a);
-  x %= signY;
-}
 
 }  // namespace l1w
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_L1W_L1W_HPP */

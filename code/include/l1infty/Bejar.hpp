@@ -46,6 +46,9 @@
  Author: Benjamin Bejar -- bbejar@cis.jhu.edu
  *=================================================================*/
 
+#ifndef PROJCODE_INCLUDE_L1INFTY_BEJAR_HPP
+#define PROJCODE_INCLUDE_L1INFTY_BEJAR_HPP
+
 # include <stdio.h>
 # include <math.h>
 # include <stdlib.h>
@@ -593,3 +596,6 @@ inline void Bejar2(double *y, double *x, const int nrows, const int ncols,
 
 }  // namespace l1infty
 }  // namespace proj
+
+
+#endif /* PROJCODE_INCLUDE_L1INFTY_BEJAR_HPP */

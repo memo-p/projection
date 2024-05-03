@@ -13,38 +13,24 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; If not, see <http://www.gnu.org/licenses/>.
+ *
+ * From the code of Laurent Condat: https://lcondat.github.io
  */
 
-#ifndef PROJCODE_INCLUDE_UTILS_PRINT_HPP
-#define PROJCODE_INCLUDE_UTILS_PRINT_HPP
+#ifndef PROJCODE_INCLUDE_UTILS_ARITHMETIC_HPP
+#define PROJCODE_INCLUDE_UTILS_ARITHMETIC_HPP
 
-
-#include <cstdio>
-#include <iostream>
-#include "utils/types.hpp"
+#include <limits>
+#include <random>
 
 namespace proj {
 
-inline void PrintMatrix(double* x, const int nrows, const int ncols) {
-  for (std::size_t i = 0; i < nrows; i++) {
-    for (std::size_t j = 0; j < ncols; j++) {
-        std::size_t id = i*ncols+j;
-        std::cout << x[id] << ", ";
-    }
-    std::cout << "\n";
-  }
-}
-inline void PrintMatrix(int* x, const int nrows, const int ncols) {
-  for (std::size_t i = 0; i < nrows; i++) {
-    for (std::size_t j = 0; j < ncols; j++) {
-        std::size_t id = i*ncols+j;
-        std::cout << x[id] << ", ";
-    }
-    std::cout << "\n";
-  }
+
+template <typename T> int sgn(T val) {
+    return (T(0) < val) - (val < T(0));
 }
 
 }  // namespace proj
 
 
-#endif /* PROJCODE_INCLUDE_UTILS_PRINT_HPP */
+#endif /* PROJCODE_INCLUDE_UTILS_ARITHMETIC_HPP */
